@@ -21,6 +21,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MuzakUI", "MuzakUI\", "{025
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "2468"
+		SlnRelativePath = "MuzakUI\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject

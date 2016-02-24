@@ -9,7 +9,7 @@ System.register(['angular2/core', 'angular2/router', './hero.service'], function
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, router_1, hero_service_1;
-    var HeroDetailComponent;
+    var TrackAddComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -22,33 +22,33 @@ System.register(['angular2/core', 'angular2/router', './hero.service'], function
                 hero_service_1 = hero_service_1_1;
             }],
         execute: function() {
-            HeroDetailComponent = (function () {
-                function HeroDetailComponent(_heroService, _routeParams) {
+            TrackAddComponent = (function () {
+                //hero: Hero;
+                function TrackAddComponent(_heroService, _routeParams) {
                     this._heroService = _heroService;
                     this._routeParams = _routeParams;
                 }
-                HeroDetailComponent.prototype.ngOnInit = function () {
-                    var _this = this;
+                TrackAddComponent.prototype.ngOnInit = function () {
                     var id = +this._routeParams.get('id');
-                    this._heroService.getHero(id)
-                        .then(function (hero) { return _this.hero = hero; });
+                    //this._heroService.getHero(id)
+                    //.then(hero => this.hero = hero);
                 };
-                HeroDetailComponent.prototype.goBack = function () {
+                TrackAddComponent.prototype.goBack = function () {
                     window.history.back();
                 };
-                HeroDetailComponent = __decorate([
+                TrackAddComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-hero-detail',
-                        inputs: ['hero'],
-                        templateUrl: 'app/hero-detail.component.html',
+                        selector: 'track-add',
+                        //inputs: ['hero'],
+                        templateUrl: 'app/track-add.component.html',
                         styleUrls: ['app/hero-detail.component.css']
                     }), 
                     __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.RouteParams])
-                ], HeroDetailComponent);
-                return HeroDetailComponent;
+                ], TrackAddComponent);
+                return TrackAddComponent;
             })();
-            exports_1("HeroDetailComponent", HeroDetailComponent);
+            exports_1("TrackAddComponent", TrackAddComponent);
         }
     }
 });
-//# sourceMappingURL=hero-detail.component.js.map
+//# sourceMappingURL=track-add.component.js.map

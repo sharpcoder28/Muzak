@@ -1,0 +1,25 @@
+
+<h2>Add Track</h2>
+<div>
+    <label>id: </label></div>
+<div>
+    <label>title: </label>
+    <input [(ngModel)]="track.title" placeholder="title" />
+</div>
+
+<div>
+    <label>artist(s): </label>
+    <input [(ngModel)]="track.artists" placeholder="artists" />
+</div>
+
+<div>
+    <label>remixer(s): </label>
+    <input [(ngModel)]="track.remixers" placeholder="remixers" />
+</div>
+
+<div>
+    <label>Genre: </label>
+    <input [(ngModel)]="track.genre" placeholder="genre" />
+</div>
+
+<button (click)="goBack()">Back</button>
