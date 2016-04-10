@@ -1,0 +1,30 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "Muzak.Domain Class Library",
+  "authors": [ "Adrianna" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "frameworks": {
+    "net451": {
+      "dependencies": {
+        "StackExchange.Redis": "1.0.488",
+        "System.Diagnostics.Debug": "4.0.11-beta-23516",
+        "System.Reflection": "4.1.0-beta-23516"
+      }
+    },
+    "dotnet5.4": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Collections": "4.0.11-beta-23516",
+        "System.Collections.Concurrent": "4.0.11-beta-23516",
+        "System.Linq": "4.0.1-beta-23516",
+        "System.Runtime": "4.0.21-beta-23516",
+        "System.Threading": "4.0.11-beta-23516"
+      }
+    }
+  },
+  "dependencies": {
+    "Newtonsoft.Json": "8.0.2"
+  }
+}

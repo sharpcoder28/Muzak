@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './hero.service'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './track.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', './hero.service'], function
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, hero_service_1;
+    var core_1, router_1, track_service_1;
     var TrackAddComponent;
     return {
         setters:[
@@ -18,32 +18,47 @@ System.register(['angular2/core', 'angular2/router', './hero.service'], function
             function (router_1_1) {
                 router_1 = router_1_1;
             },
-            function (hero_service_1_1) {
-                hero_service_1 = hero_service_1_1;
+            function (track_service_1_1) {
+                track_service_1 = track_service_1_1;
             }],
         execute: function() {
             TrackAddComponent = (function () {
-                //hero: Hero;
-                function TrackAddComponent(_heroService, _routeParams) {
-                    this._heroService = _heroService;
+                function TrackAddComponent(_trackService, _routeParams) {
+                    this._trackService = _trackService;
                     this._routeParams = _routeParams;
+                    this.track = {
+                        id: 0,
+                        title: '',
+                        artists: '',
+                        remixers: '',
+                        genre: ''
+                    };
                 }
-                TrackAddComponent.prototype.ngOnInit = function () {
-                    var id = +this._routeParams.get('id');
-                    //this._heroService.getHero(id)
-                    //.then(hero => this.hero = hero);
+                // ngOnInit() {
+                //     let id = +this._routeParams.get('id');
+                //     //this._heroService.getHero(id)
+                //     //.then(hero => this.hero = hero);
+                // }
+                TrackAddComponent.prototype.save = function () {
+                    var _this = this;
+                    console.log("save");
+                    this._trackService.addTrack(this.track)
+                        .subscribe(function (track) { return _this.tracks.push(track); }, function (error) { return _this.errorMessage = error; });
                 };
-                TrackAddComponent.prototype.goBack = function () {
-                    window.history.back();
+                TrackAddComponent.prototype.addTrack = function (track) {
+                    var _this = this;
+                    //if (!name) {return;}
+                    this._trackService.addTrack(track)
+                        .subscribe(function (track) { return _this.tracks.push(track); }, function (error) { return _this.errorMessage = error; });
                 };
                 TrackAddComponent = __decorate([
                     core_1.Component({
                         selector: 'track-add',
                         //inputs: ['hero'],
-                        templateUrl: 'app/track-add.component.html',
+                        templateUrl: 'app/track/track-add.component.html',
                         styleUrls: ['app/hero-detail.component.css']
                     }), 
-                    __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.RouteParams])
+                    __metadata('design:paramtypes', [track_service_1.TrackService, router_1.RouteParams])
                 ], TrackAddComponent);
                 return TrackAddComponent;
             })();

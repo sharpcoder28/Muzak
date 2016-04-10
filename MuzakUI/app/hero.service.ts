@@ -18,4 +18,7 @@ export class HeroService {
       heroes => heroes.filter(hero => hero.id === id)[0]
     );
   }
+  getValues() {
+      
+  }
 }

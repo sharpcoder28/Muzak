@@ -1,4 +1,4 @@
-System.register(['angular2/core', './hero.service', './heroes.component', './hero-detail.component', './dashboard.component', 'angular2/router', './track-add.component'], function(exports_1) {
+System.register(['angular2/core', './hero.service', './track/track.service', './artist/artist.service', './heroes.component', './hero-detail.component', './dashboard.component', 'angular2/router', './track/track-add.component', 'angular2/http', './artist/artist-add.component'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', './hero.service', './heroes.component', './her
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, hero_service_1, heroes_component_1, hero_detail_component_1, dashboard_component_1, router_1, track_add_component_1;
+    var core_1, hero_service_1, track_service_1, artist_service_1, heroes_component_1, hero_detail_component_1, dashboard_component_1, router_1, track_add_component_1, http_1, artist_add_component_1;
     var AppComponent;
     return {
         setters:[
@@ -17,6 +17,12 @@ System.register(['angular2/core', './hero.service', './heroes.component', './her
             },
             function (hero_service_1_1) {
                 hero_service_1 = hero_service_1_1;
+            },
+            function (track_service_1_1) {
+                track_service_1 = track_service_1_1;
+            },
+            function (artist_service_1_1) {
+                artist_service_1 = artist_service_1_1;
             },
             function (heroes_component_1_1) {
                 heroes_component_1 = heroes_component_1_1;
@@ -32,6 +38,12 @@ System.register(['angular2/core', './hero.service', './heroes.component', './her
             },
             function (track_add_component_1_1) {
                 track_add_component_1 = track_add_component_1_1;
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
+            },
+            function (artist_add_component_1_1) {
+                artist_add_component_1 = artist_add_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -60,16 +72,29 @@ System.register(['angular2/core', './hero.service', './heroes.component', './her
                             path: '/trackadd',
                             name: 'TrackAdd',
                             component: track_add_component_1.TrackAddComponent
-                        }
+                        },
+                        {
+                            path: '/search',
+                            name: 'Search',
+                            component: track_add_component_1.TrackAddComponent
+                        },
+                        {
+                            path: '/artistadd',
+                            name: 'ArtistCreate',
+                            component: artist_add_component_1.ArtistCreateComponent
+                        },
                     ]),
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <h1>{{title}}</h1>\n        <nav>\n            <a [routerLink]=\"['Dashboard']\">Dashboard</a>\n            <a [routerLink]=\"['Heroes']\">Heroes</a>\n            <a [routerLink]=\"['TrackAdd']\">Add Track</a>\n            <a [routerLink]=\"['Search']\">Search</a>\n        </nav>\n        <router-outlet></router-outlet>\n    ",
+                        template: "\n        <h1>{{title}}</h1>\n        <nav>\n            <a [routerLink]=\"['Dashboard']\">Dashboard</a>\n            <a [routerLink]=\"['Heroes']\">Heroes</a>\n            <a [routerLink]=\"['TrackAdd']\">Add Track</a>\n            <a [routerLink]=\"['Search']\">Search</a>\n            <a [routerLink]=\"['ArtistCreate']\">Add Artist</a>\n        </nav>\n        <router-outlet></router-outlet>\n    ",
                         styleUrls: ['app/app.component.css'],
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [
                             router_1.ROUTER_PROVIDERS,
-                            hero_service_1.HeroService
+                            hero_service_1.HeroService,
+                            track_service_1.TrackService,
+                            http_1.HTTP_PROVIDERS,
+                            artist_service_1.ArtistService
                         ]
                     }), 
                     __metadata('design:paramtypes', [])

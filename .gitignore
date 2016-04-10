@@ -148,6 +148,8 @@ publish/
 !**/packages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
 #!**/packages/repositories.config
+*.nuget.props
+*.nuget.targets
 
 # Windows Azure Build Output
 csx/
